@@ -60,7 +60,7 @@ export function PricingCard({
       )}
 
       <div className="mb-5">
-        <h3 className="text-xl font-bold">{title}</h3>
+        <h3 className="text-3xl font-bold">{title}</h3>
       </div>
 
       <div className="mb-5 text-left">
@@ -86,7 +86,9 @@ export function PricingCard({
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
             <Check className="h-5 w-5 text-[#0eb49b] flex-shrink-0 mr-2" />
-            <span className="text-sm text-gray-600">{feature}</span>
+            <span className="text-base text-gray-600">
+              {isLifetime && feature === "Suporte Prioritário" ? "Suporte Prioritário Vitalício" : feature}
+            </span>
           </li>
         ))}
       </ul>
@@ -108,7 +110,7 @@ export function PricingCard({
         )}
       </div>
 
-      <Button className="w-full bg-[#0eb49b] hover:bg-[#0ca38c] text-white">Pedir Demo</Button>
+      <Button className="w-full bg-[#0eb49b] hover:bg-[#0ca38c] text-white text-lg py-6">Pedir Demo</Button>
     </div>
   )
 }
