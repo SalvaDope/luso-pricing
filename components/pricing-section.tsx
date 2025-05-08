@@ -52,7 +52,7 @@ export function PricingSection() {
 
   return (
     <section className="w-full pt-2 pb-6 md:pt-5 md:pb-12 lg:pt-6 lg:pb-16 bg-white">
-      <div className="container px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="flex justify-center mt-2 mb-8">
           <PriceToggle isAnnual={isAnnual} setIsAnnual={setIsAnnual} />
         </div>
