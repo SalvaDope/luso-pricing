@@ -63,7 +63,7 @@ export function PricingSection() {
               key={index}
               title={plan.title}
               price={isAnnual ? plan.monthlyPriceWithAnnual : plan.monthlyPrice}
-              priceText="€/mês"
+              priceText="/mês"
               features={plan.features}
               spotsAvailable={plan.spotsAvailable}
               totalSpots={plan.totalSpots}
@@ -80,7 +80,7 @@ export function PricingSection() {
           <PricingCard
             title={lifetimeDeal.title}
             price={lifetimeDeal.price}
-            priceText="€ (pagamento único)"
+            priceText=" (pagamento único)"
             features={lifetimeDeal.features}
             spotsAvailable={lifetimeDeal.spotsAvailable}
             totalSpots={lifetimeDeal.totalSpots}

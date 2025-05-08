@@ -35,6 +35,11 @@ export function PricingCard({
   futurePrice,
   className,
 }: PricingCardProps) {
+  // Função para formatar o preço com espaço entre milhares
+  const formatPrice = (value: number) => {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+  }
+
   return (
     <div
       className={cn(
@@ -65,12 +70,12 @@ export function PricingCard({
 
       <div className="mb-5 text-left">
         <div className="flex items-baseline">
-          <span className="text-3xl font-bold">€{Math.round(price)}</span>
+          <span className="text-3xl font-bold">{isLifetime ? formatPrice(Math.round(price)) : Math.round(price)}€</span>
           <span className="ml-1 text-gray-500 text-sm">{priceText}</span>
         </div>
 
         {annualBilling && annualPrice && (
-          <div className="mt-1 text-sm text-gray-500">Cobrança anual de €{Math.round(annualPrice)}</div>
+          <div className="mt-1 text-sm text-gray-500">Cobrança anual de {formatPrice(Math.round(annualPrice))}€</div>
         )}
 
         {showSavingsBadge && savingsAmount > 0 && (
@@ -103,8 +108,8 @@ export function PricingCard({
           <div className="text-gray-500 mt-1">
             <span>
               {isLifetime
-                ? `Depois passará para €${Math.round(futurePrice)}`
-                : `Depois passará para €${Math.round(futurePrice)}/mês`}
+                ? `Depois passará para ${formatPrice(Math.round(futurePrice))}€`
+                : `Depois passará para ${Math.round(futurePrice)}€/mês`}
             </span>
           </div>
         )}
