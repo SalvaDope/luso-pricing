@@ -72,12 +72,12 @@ export function PricingSection() {
 
   return (
     <section className="w-full pt-2 pb-6 md:pt-5 md:pb-12 lg:pt-6 lg:pb-16 bg-white">
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-center mt-2 mb-8">
           <PriceToggle isAnnual={isAnnual} setIsAnnual={setIsAnnual} />
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-4 lg:gap-6 mx-auto">
           {subscriptionPlans.map((plan, index) => (
             <PricingCard
               key={index}
