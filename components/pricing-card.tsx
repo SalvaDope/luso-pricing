@@ -101,7 +101,11 @@ export function PricingCard({
       <div className="mt-2 mb-4 text-sm text-left">
         <div className="text-gray-500">
           <span>
-            {spotsAvailable} de {totalSpots} lugares disponíveis
+            {title === "Plano Freelancer"
+              ? "4 de 5 lugares disponíveis"
+              : title === "Plano Agência"
+                ? "8 de 10 lugares disponíveis"
+                : "5 de 5 lugares disponíveis"}
           </span>
         </div>
         {futurePrice && (

@@ -10,6 +10,26 @@ export function PricingSection() {
 
   const subscriptionPlans = [
     {
+      title: "Plano Freelancer",
+      monthlyPrice: 59,
+      yearlyPrice: 588, // 49 * 12
+      monthlyPriceWithAnnual: 49,
+      features: [
+        "2 Chatbots",
+        "Leads Ilimitados",
+        "Exportação de Leads",
+        "Integrações Automáticas & Universais",
+        "Construtor de Chatbots Drag & Drop",
+        "URL Scraper Incluído",
+        "Suporte Prioritário",
+        "Análise Avançada de Dados",
+      ],
+      spotsAvailable: 4,
+      totalSpots: 5,
+      futurePrice: 79,
+      popular: false,
+    },
+    {
       title: "Plano Agência",
       monthlyPrice: 149,
       yearlyPrice: 1188, // 99 * 12
@@ -57,7 +77,7 @@ export function PricingSection() {
           <PriceToggle isAnnual={isAnnual} setIsAnnual={setIsAnnual} />
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 max-w-6xl mx-auto">
           {subscriptionPlans.map((plan, index) => (
             <PricingCard
               key={index}
