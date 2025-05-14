@@ -43,7 +43,7 @@ export function PricingCard({
   return (
     <div
       className={cn(
-        "relative flex flex-col p-4 sm:p-5 bg-white rounded-xl border shadow-sm transition-all",
+        "relative flex flex-col p-5 bg-white rounded-xl border shadow-sm transition-all h-full",
         "hover:shadow-md hover:translate-y-[-2px]",
         className,
       )}
@@ -64,13 +64,13 @@ export function PricingCard({
         </div>
       )}
 
-      <div className="mb-4">
+      <div className="mb-5">
         <h3 className="text-2xl sm:text-3xl font-bold">{title}</h3>
       </div>
 
-      <div className="mb-4 text-left">
+      <div className="mb-5 text-left">
         <div className="flex items-baseline">
-          <span className="text-2xl sm:text-3xl font-bold">
+          <span className="text-2xl sm:text-3xl font-bold whitespace-nowrap">
             {isLifetime ? formatPrice(Math.round(price)) : Math.round(price)}€
           </span>
           <span className="ml-1 text-gray-500 text-sm">{priceText}</span>
@@ -89,18 +89,18 @@ export function PricingCard({
         )}
       </div>
 
-      <ul className="space-y-2 mb-4 flex-grow">
+      <ul className="space-y-3 mb-6 flex-grow">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
             <Check className="h-5 w-5 text-[#0eb49b] flex-shrink-0 mr-2" />
-            <span className="text-sm sm:text-base text-gray-600">
+            <span className="text-base text-gray-600">
               {isLifetime && feature === "Suporte Prioritário" ? "Suporte Prioritário Vitalício" : feature}
             </span>
           </li>
         ))}
       </ul>
 
-      <div className="mt-2 mb-4 text-sm text-left">
+      <div className="mt-auto mb-5 text-sm text-left">
         <div className="text-gray-500">
           <span>
             {title === "Plano Freelancer"
@@ -121,7 +121,7 @@ export function PricingCard({
         )}
       </div>
 
-      <Button className="w-full bg-[#0eb49b] hover:bg-[#0ca38c] text-white text-lg py-5 sm:py-6">Pedir Demo</Button>
+      <Button className="w-full bg-[#0eb49b] hover:bg-[#0ca38c] text-white text-lg py-6">Pedir Demo</Button>
     </div>
   )
 }
